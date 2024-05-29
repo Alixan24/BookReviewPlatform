@@ -1,0 +1,16 @@
+{% extends "firstpage/layout.html" %}
+
+{% block title %}News{% endblock %}
+
+{% block content %}
+    {% if news %}
+    {% for el in news %}
+        <div class="alert alert-warning">
+            <h3>{{el.title}}</h3>
+            <p>{{el.anons}}</p>
+        </div>
+    {% endfor %}
+    {% else %}
+        <p>No news</p>
+    {% endif %}
+{% endblock %}

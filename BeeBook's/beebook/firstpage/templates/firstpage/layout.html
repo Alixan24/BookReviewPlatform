@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock  %}</title>
+    <link rel="stylesheet" href="{% static 'firstpage/css/firstpage.css'%}"> 
+</head>
+<body> 
+    <aside>
+        <img src="{% static 'firstpage/img/unnamed.jpg'%}" alt="Лого"> 
+        <span class="logo">BeeBook</span> 
+        <h3>Navigation</h3>
+        <ul>
+            <a href="{% url 'home' %}"><li>Home</li></a>
+            <a href="{% url 'about' %}"><li>About us</li></a>
+            <a href=""><li>News</li></a>
+            <a href=""><li>Contacts</li></a>
+            <a href=""><li><button class="btn btn-info"><i class= fas fa-plus-circle></i>Add Review</li></a>
+        </ul>
+    </aside>
+    
+    <main>
+        {% block content %} 
+
+        {% endblock  %}
+    </main>
+</body>
+</html>
